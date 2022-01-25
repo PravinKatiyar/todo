@@ -1,0 +1,54 @@
+<div class="col-md-6 offset-md-3">
+    <h3 align="center"> Add Task</h3>
+    <form (ngSubmit) = "onSubmit()" #addTask="ngForm">
+    
+        <div class="form-group">
+            <label> Task </label>
+            <input type="text" class ="form-control" id = "topic"
+            #task="ngModel"
+                [(ngModel)] = "todo.topic" name = "topic" required>
+                <small class="text-danger" *ngIf="!task.valid && task.touched && task.errors">Add task!!!</small>
+        </div>
+    
+        <div class="form-group">
+            <label> Description </label>
+            <textarea type="text" class ="form-control" id = "description" #desc="ngModel" required
+                [(ngModel)] = "todo.description" name = "description" rows="3"></textarea>
+                <small class="text-danger" *ngIf="!desc.valid && desc.touched && desc.errors">Add desc!!!</small>
+
+        </div>
+    
+        <div class="form-group">
+            <label for="gender">Select Status<sup>*</sup></label>
+            <select class="form-control" id="status"  [(ngModel)]="todo.status" name="status" ngModel required>
+              <option value="PENDING" disabled>Select Status</option>  
+              <option value="DONE">DONE</option>
+              <option value="PENDING">PENDING</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="datetime">Due Date & Time</label>
+            <input type="datetime-local" id="dateID" class ="form-control"
+            [(ngModel)] = "todo.dueDateTime" id="datetime" name="datetime">
+          </div>
+    
+        <button class = "btn btn-success" [disabled]="!addTask.valid" type ="submit">Add Task</button>
+    
+    </form>
+    </div> 
+
+    <script>
+        
+var dtToday = new Date();
+var month = dtToday.getMonth() + 1;     // getMonth() is zero-based
+var day = dtToday.getDate();
+var year = dtToday.getFullYear();
+if(month < 10)
+   month = '0' + month.toString();
+if(day < 10)
+   day = '0' + day.toString();
+
+var maxDate = year + '-' + month + '-' + day;
+$('#dateID').attr('max', maxDate);
+    </script>

@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3">
+    <h3 align="center"> Update Task Status </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Task </label>
+            <input type="text" class ="form-control" id = "topic" readonly
+                [(ngModel)] = "todo.topic" name = "topic">
+        </div>
+    
+        <div class="form-group">
+            <label> Description </label>
+            <textarea type="text" class ="form-control" id = "description"
+                [(ngModel)] = "todo.description" name = "description" rows="3"></textarea>
+        </div>
+    
+        <div class="form-group">
+            <label for="gender">Select Status<sup>*</sup></label>
+            <select class="form-control" id="status"  [(ngModel)]="todo.status" name="status" ngModel required>
+              <option value="undefined" disabled>Select Status</option>  
+              <option value="DONE">DONE</option>
+              <option value="PENDING">PENDING</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="datetime">Due Date & Time</label>
+            <input type="datetime-local" class ="form-control" id = "datetime"
+            [(ngModel)] = "todo.dueDateTime" id="datetime" name="datetime">
+          </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

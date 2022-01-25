@@ -1,0 +1,37 @@
+.purple-border textarea {
+    border: 1px solid #ba68c8;
+}
+.purple-border .form-control:focus {
+    border: 1px solid #ba68c8;
+    box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
+}
+
+.green-border-focus .form-control:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+}
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px inset rgba(248, 3, 3, 0.274);
+}
+
+input.ng-valid.ng-touched,select.ng-valid.ng-touched{
+    border: 1px solid greenyellow;
+    box-shadow: 0 0 13px inset rgba(8, 8, 8, 0.274);
+}
+
+
+
+h1 {
+  color:rgb(3, 4, 73);
+  font-style: italic;
+  font-size: xx-large;
+  font-weight: 1000;
+}
+
+#formtext{
+  color:rgb(7, 7, 22);
+  font-style: italic;
+  font-size:small;
+  font-weight: 1000;
+}

@@ -1,0 +1,19 @@
+<h2 align="center"> Todo List</h2>
+<table class = "col-sm-8 offset-md-2 text-left">
+    
+    <div class="card" style="width: 18rem;" *ngFor = "let todo of todos" style="margin-top: 10px">
+        <div class="card-header">
+            {{ todo.topic }}
+          </div>
+        <div class="card-body"  >
+          <h6 class="card-subtitle mb-2 text-muted">{{ todo.status }}</h6>
+          <p><small class="card-subtitle mb-2 text-muted">Created: {{ todo.createdDateTime }} || Due: {{ todo.dueDateTime }} </small></p>
+          <p class="card-text"> {{ todo.description }} </p>
+          <button (click) = "completeTodo(todo.id)" class = "btn btn-outline-success"> Done</button>
+
+                <button (click) = "updateTodo(todo.id)" class = "btn btn-outline-warning" style="margin-left: 10px"> Update</button>
+                <button (click) = "deleteTodo(todo.id,todo.topic)" class = "btn btn-outline-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "todoDetails(todo.id)" class = "btn btn-outline-secondary" style="margin-left: 10px"> View</button>
+        </div>
+      </div>
+</table>
